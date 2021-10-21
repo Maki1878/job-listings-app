@@ -18,7 +18,11 @@ button {
   border-radius: 0.5rem;
   border: none;
   height: 3rem;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: var(--font-bold);
+}
+button:hover {
+  color: white;
+  background-color: var(--color-primary);
 }
 </style>

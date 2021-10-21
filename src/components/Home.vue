@@ -1,29 +1,36 @@
 <template>
-  <Job
-    v-for="job in jobs"
-    :key="job.id"
-    :path="job.path"
-    :company="job.company"
-    :latest="job.new"
-    :featured="job.featured"
-    :position="job.position"
-    :postedAt="job.postedAt"
-    :contract="job.contract"
-    :location="job.location"
-    :tags="job.tags"
-  />
+  <div :class="{ addFilters: filtersExist }">
+    <Filterbar :filters="filters" v-if="filtersExist" @remove-filter="removeFilter" />
+    <Job
+      v-for="job in jobs"
+      :key="job.id"
+      :path="job.path"
+      :company="job.company"
+      :latest="job.new"
+      :featured="job.featured"
+      :position="job.position"
+      :postedAt="job.postedAt"
+      :contract="job.contract"
+      :location="job.location"
+      :tags="job.tags"
+      @add-filter="updateFilters"
+    />
+  </div>
 </template>
 
 <script>
 import Job from './Job.vue';
+import Filterbar from './Filterbar.vue';
 export default {
   components: {
     Job,
+    Filterbar,
   },
 
   data() {
     return {
       jobs: [],
+      filters: [],
     };
   },
   mounted() {
@@ -40,11 +47,28 @@ export default {
           item.tags = tags;
         });
         this.jobs = data;
-        console.log(this.jobs);
       })
       .catch((err) => console.log(err.message));
+  },
+  methods: {
+    updateFilters(newFilter) {
+      this.filters.push(newFilter);
+    },
+    removeFilter(filter) {
+      this.filters = this.filters.filter((tag) => tag !== filter);
+    },
+  },
+  computed: {
+    filtersExist() {
+      return this.filters.length > 0;
+    },
   },
 };
 </script>
 
-<style></style>
+<style>
+.addFilters {
+  position: relative;
+  top: -5.8rem;
+}
+</style>
