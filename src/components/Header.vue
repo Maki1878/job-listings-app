@@ -18,5 +18,6 @@ export default {
   width: 144rem;
   height: 11rem;
   object-fit: cover;
+  margin-bottom: 2rem;
 }
 </style>

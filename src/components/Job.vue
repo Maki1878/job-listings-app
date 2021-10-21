@@ -2,7 +2,7 @@
   <BaseCard>
     <div class="job-container">
       <div class="job-description">
-        <img :src="feedPath" />
+        <img :src="feedPath" class="logo" />
         <div class="job-details">
           <div class="job-details-1">
             <p class="company">{{ company }}</p>
@@ -137,5 +137,39 @@ export default {
   display: flex;
   gap: 2rem;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 67em) {
+  .job-container {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+}
+
+@media (max-width: 39em) {
+  .job-description {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .job-description {
+    margin-top: -5.3rem;
+  }
+
+  .logo {
+    height: 5.5rem;
+    width: 5.5rem;
+  }
+
+  .job-details {
+    gap: 1rem;
+    border-bottom: 1.5px solid var(--color-grey);
+    padding-bottom: 1.8rem;
+  }
+
+  .job-tags {
+    gap: 1.5rem;
+  }
 }
 </style>

@@ -48,6 +48,7 @@ export default {
 .filter-tags {
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .filter-tag {
@@ -85,5 +86,13 @@ export default {
 
 .clear:hover {
   border-bottom: 2px solid var(--color-primary);
+}
+
+@media (max-width: 39em) {
+  .filterbar {
+    position: relative;
+    top: -2rem;
+    /* margin-top: -2rem; */
+  }
 }
 </style>
