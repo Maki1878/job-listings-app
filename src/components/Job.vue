@@ -109,11 +109,13 @@ export default {
 }
 
 .job-position {
-  color: var(--color-primary);
+  color: var(--color-grey-dark);
+  transition: all 0.2s;
 }
 
 .job-position:hover {
   cursor: pointer;
+  color: var(--color-primary);
 }
 
 .job-details-2 {

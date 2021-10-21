@@ -10,9 +10,7 @@
             </div>
           </div>
         </div>
-        <div class="clear-container">
-          <span class="clear">Clear</span>
-        </div>
+        <span class="clear">Clear</span>
       </div>
     </BaseCard>
   </div>
@@ -64,6 +62,7 @@ export default {
   place-items: center;
   border-radius: 0 0.5rem 0.5rem 0;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .icon-container:hover {
@@ -75,18 +74,16 @@ export default {
   width: 1.3rem;
 }
 
-.clear-container {
-  padding-left: 2rem;
-}
-
-.clear-container:hover {
-  cursor: pointer;
-}
-
 .clear {
   font-size: 1.3rem;
   font-weight: var(--font-bold);
   color: var(--color-primary);
+  transition: all 0.2s;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+}
+
+.clear:hover {
   border-bottom: 2px solid var(--color-primary);
 }
 </style>

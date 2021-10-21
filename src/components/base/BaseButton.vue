@@ -20,6 +20,7 @@ button {
   height: 3rem;
   font-size: 1.3rem;
   font-weight: var(--font-bold);
+  transition: all 0.3s;
 }
 button:hover {
   color: white;
