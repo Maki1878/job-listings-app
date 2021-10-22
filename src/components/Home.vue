@@ -39,7 +39,7 @@ export default {
     };
   },
   mounted() {
-    fetch('../data.json', {
+    fetch('./data.json', {
       method: 'GET',
       headers: { 'Content-type': 'application/json' },
     })
