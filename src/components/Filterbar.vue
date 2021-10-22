@@ -66,7 +66,8 @@ export default {
   transition: all 0.3s;
 }
 
-.icon-container:hover {
+.icon-container:hover,
+.icon-container:active {
   background-color: var(--color-grey-dark);
 }
 
@@ -84,7 +85,8 @@ export default {
   border-bottom: 2px solid transparent;
 }
 
-.clear:hover {
+.clear:hover,
+.clear:active {
   border-bottom: 2px solid var(--color-primary);
 }
 

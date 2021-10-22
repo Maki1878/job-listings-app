@@ -113,7 +113,8 @@ export default {
   transition: all 0.2s;
 }
 
-.job-position:hover {
+.job-position:hover,
+.job-position:active {
   cursor: pointer;
   color: var(--color-primary);
 }

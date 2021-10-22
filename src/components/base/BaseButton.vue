@@ -22,7 +22,9 @@ button {
   font-weight: var(--font-bold);
   transition: all 0.3s;
 }
-button:hover {
+
+button:hover,
+button:active {
   color: white;
   background-color: var(--color-primary);
 }
