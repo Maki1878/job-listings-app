@@ -5,13 +5,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ['featured'],
+};
 </script>
 
 <style scoped>
 .card {
   border-radius: 6px;
-  box-shadow: 0 2px 10px var(--color-grey);
+  box-shadow: 0 5px 10px var(--color-grey);
   padding: 2rem;
   margin: 2.3rem auto;
   max-width: 80%;

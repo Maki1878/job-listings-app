@@ -1,5 +1,5 @@
 <template>
-  <BaseCard>
+  <BaseCard :class="{ border: featured }">
     <div class="job-container">
       <div class="job-description">
         <img :src="feedPath" class="logo" />
@@ -138,6 +138,10 @@ export default {
   gap: 2rem;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.border {
+  border-left: 5px solid var(--color-primary);
 }
 
 @media (max-width: 67em) {

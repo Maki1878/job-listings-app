@@ -71,10 +71,4 @@ export default {
   position: relative;
   top: -8.3rem;
 }
-
-/* @media (max-width: 39em) {
-  .addFilters {
-    margin-top: -3rem;
-  }
-} */
 </style>
