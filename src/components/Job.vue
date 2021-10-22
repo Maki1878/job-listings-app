@@ -2,7 +2,7 @@
   <BaseCard :class="{ border: featured }">
     <div class="job-container">
       <div class="job-description">
-        <img :src="feedPath" class="logo" />
+        <img :src="feedPath" class="company-logo" />
         <div class="job-details">
           <div class="job-details-1">
             <p class="company">{{ company }}</p>
@@ -156,13 +156,10 @@ export default {
   .job-description {
     flex-direction: column;
     gap: 1rem;
-  }
-
-  .job-description {
     margin-top: -5.3rem;
   }
 
-  .logo {
+  .company-logo {
     height: 5.5rem;
     width: 5.5rem;
   }

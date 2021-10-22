@@ -10,7 +10,7 @@
             </div>
           </div>
         </div>
-        <span class="clear" @click="$emit('clear-filters')">Clear</span>
+        <span class="clear-filters" @click="$emit('clear-filters')">Clear</span>
       </div>
     </BaseCard>
   </div>
@@ -76,7 +76,7 @@ export default {
   width: 1.3rem;
 }
 
-.clear {
+.clear-filters {
   font-size: 1.3rem;
   font-weight: var(--font-bold);
   color: var(--color-primary);
@@ -85,8 +85,8 @@ export default {
   border-bottom: 2px solid transparent;
 }
 
-.clear:hover,
-.clear:active {
+.clear-filters:hover,
+.clear-filters:active {
   border-bottom: 2px solid var(--color-primary);
 }
 
@@ -94,7 +94,6 @@ export default {
   .filterbar {
     position: relative;
     top: -2rem;
-    /* margin-top: -2rem; */
   }
 }
 </style>

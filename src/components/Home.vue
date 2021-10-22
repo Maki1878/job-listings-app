@@ -7,7 +7,7 @@
       @clear-filters="clearFilters"
     />
     <Job
-      v-for="job in jobs"
+      v-for="job in filteredJobs"
       :key="job.id"
       :path="job.path"
       :company="job.company"
@@ -18,7 +18,7 @@
       :contract="job.contract"
       :location="job.location"
       :tags="job.tags"
-      @add-filter="updateFilters"
+      @add-filter="addFilter"
     />
   </div>
 </template>
@@ -38,7 +38,7 @@ export default {
       filters: [],
     };
   },
-  mounted() {
+  created() {
     fetch('./data.json', {
       method: 'GET',
       headers: { 'Content-type': 'application/json' },
@@ -56,11 +56,14 @@ export default {
       .catch((err) => console.log(err.message));
   },
   methods: {
-    updateFilters(newFilter) {
+    addFilter(newFilter) {
+      if (this.filters.indexOf(newFilter) !== -1) {
+        return;
+      }
       this.filters.push(newFilter);
     },
-    removeFilter(filter) {
-      this.filters = this.filters.filter((tag) => tag !== filter);
+    removeFilter(removedFilter) {
+      this.filters = this.filters.filter((filter) => filter !== removedFilter);
     },
     clearFilters() {
       this.filters = [];
@@ -69,6 +72,17 @@ export default {
   computed: {
     filtersExist() {
       return this.filters.length > 0;
+    },
+    filteredJobs() {
+      if (this.filters.length === 0) {
+        return this.jobs;
+      }
+      return this.jobs.filter((job) => {
+        if (this.filters.every((filter) => job.tags.includes(filter))) {
+          return true;
+        }
+        return false;
+      });
     },
   },
 };
