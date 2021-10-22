@@ -1,6 +1,11 @@
 <template>
   <div :class="{ addFilters: filtersExist }">
-    <Filterbar :filters="filters" v-if="filtersExist" @remove-filter="removeFilter" />
+    <Filterbar
+      :filters="filters"
+      v-if="filtersExist"
+      @remove-filter="removeFilter"
+      @clear-filters="clearFilters"
+    />
     <Job
       v-for="job in jobs"
       :key="job.id"
@@ -56,6 +61,9 @@ export default {
     },
     removeFilter(filter) {
       this.filters = this.filters.filter((tag) => tag !== filter);
+    },
+    clearFilters() {
+      this.filters = [];
     },
   },
   computed: {

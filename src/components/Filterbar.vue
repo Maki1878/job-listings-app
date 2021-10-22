@@ -10,7 +10,7 @@
             </div>
           </div>
         </div>
-        <span class="clear">Clear</span>
+        <span class="clear" @click="$emit('clear-filters')">Clear</span>
       </div>
     </BaseCard>
   </div>
