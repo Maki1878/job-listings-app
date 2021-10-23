@@ -79,7 +79,7 @@ export default {
 .clear-filters {
   font-size: 1.3rem;
   font-weight: var(--font-bold);
-  color: var(--color-primary);
+  color: var(--color-grey);
   transition: all 0.2s;
   cursor: pointer;
   border-bottom: 2px solid transparent;
@@ -87,6 +87,7 @@ export default {
 
 .clear-filters:hover,
 .clear-filters:active {
+  color: var(--color-primary);
   border-bottom: 2px solid var(--color-primary);
 }
 
