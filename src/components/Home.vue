@@ -6,6 +6,17 @@
       @remove-filter="removeFilter"
       @clear-filters="clearFilters"
     />
+    <NButton
+      :icon="icon"
+      label="face"
+      :disabled="true"
+      :negative="true"
+      @click="log"
+      class="style-nbutton"
+    >
+      <template v-slot:label>zzzzzzzzzzzzzzzzzz</template>
+      <template v-slot:icon><span class="material-icons icon">delete</span></template>
+    </NButton>
     <Job
       v-for="job in filteredJobs"
       :key="job.id"
@@ -26,16 +37,19 @@
 <script>
 import Job from './Job.vue';
 import Filterbar from './Filterbar.vue';
+import NButton from './ui/NButton.vue';
 export default {
   components: {
     Job,
     Filterbar,
+    NButton,
   },
 
   data() {
     return {
       jobs: [],
       filters: [],
+      icon: 'face',
     };
   },
   created() {
@@ -68,6 +82,9 @@ export default {
     clearFilters() {
       this.filters = [];
     },
+    log() {
+      console.log('radi');
+    },
   },
   computed: {
     filtersExist() {
@@ -92,5 +109,11 @@ export default {
 .addFilters {
   position: relative;
   top: -8.3rem;
+}
+
+.style-nbutton {
+  height: 7rem;
+  width: 25rem;
+  cursor: pointer;
 }
 </style>
